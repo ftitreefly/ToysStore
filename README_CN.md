@@ -53,7 +53,12 @@ ToysStore/
 1. 克隆仓库
 2. 使用 Xcode 打开 `ToysStore.xcodeproj`
 3. 选择目标设备 (Mac)
-4. 按 `Cmd + R` 构建并运行
+4. **⚠️ 重要提示：使用 Release 配置**
+   - Debug 版本难度太容易
+   - 选择 **Product → Scheme → Edit Scheme...**
+   - 将 **Run** 和 **Archive** 设置为使用 **Release** 配置
+   - 或使用命令行：`xcodebuild -configuration Release`
+5. 按 `Cmd + R` 构建并运行
 
 ## 🔬 架构概览
 
@@ -97,6 +102,7 @@ enum StoreStatus {
 
 ## 📝 注意事项
 
+- **⚠️ 必须使用 Release 构建**: **编译环境必须使用 Release 配置**。Debug 版本包含调试符号，太容易被逆向工程或破解。对于 Frida 演示，请使用 Release 构建以使挑战更加真实。
 - **纯 Swift 实现**: 完全使用 Swift 6+ 构建，无 Objective-C 依赖
 - **内存存储**: 数据仅存储在内存中 (`isStoredInMemoryOnly: true`)，应用重启后数据会重置
 - **初始钱包余额**: ¥1,000.00

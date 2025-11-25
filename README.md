@@ -55,7 +55,12 @@ ToysStore/
 1. Clone the repository
 2. Open `ToysStore.xcodeproj` in Xcode
 3. Select your target device (Mac)
-4. Press `Cmd + R` to build and run
+4. **⚠️ IMPORTANT: Use Release Configuration**
+   - Debug builds are too easy to crack/reverse engineer
+   - Select **Product → Scheme → Edit Scheme...**
+   - Set **Run** and **Archive** to use **Release** configuration
+   - Or use command line: `xcodebuild -configuration Release`
+5. Press `Cmd + R` to build and run
 
 ## 🔬 Architecture Overview
 
@@ -93,6 +98,7 @@ enum StoreStatus {
 
 ## 📝 Notes
 
+- **⚠️ Release Build Required**: **Always use Release configuration** for production builds. Debug builds contain debug symbols and are too easy to reverse engineer or crack. For Frida demonstrations, use Release builds to make the challenge more realistic.
 - **Pure Swift Implementation**: Built entirely with Swift 6+, no Objective-C dependencies
 - **In-Memory Storage**: Data is stored in memory only (`isStoredInMemoryOnly: true`) - resets on app restart
 - **Initial Wallet Balance**: ¥1,000.00
