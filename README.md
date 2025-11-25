@@ -1,5 +1,6 @@
 # 🧸 ToysStore
 
+[中文文档](README_CN.md) | English
 
 A macOS toy store demo application built with SwiftUI and SwiftData. This project is designed for **Frida dynamic instrumentation demonstration**.
 
