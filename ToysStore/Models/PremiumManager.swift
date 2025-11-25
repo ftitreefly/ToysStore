@@ -16,4 +16,6 @@ final class PremiumManager {
     func isCoreUnlocked() -> Bool {
         false
     }
+    
+    deinit {}
 }
